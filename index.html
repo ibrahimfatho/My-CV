@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibrahim Fathelrahman - Web Developer & Graphic Designer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f5f3ff 0%, #e8e5ff 100%);
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #7c3aed;
+        }
+
+        nav a {
+            color: #666;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #7c3aed;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #f5f3ff 0%, #e8e5ff 100%);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            line-height: 1.2;
+        }
+
+        .hero .highlight {
+            color: #7c3aed;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 1.5rem auto;
+        }
+
+        .hero .buttons {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #7c3aed;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #6d28d9;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #7c3aed;
+            border: 2px solid #7c3aed;
+        }
+
+        .btn-secondary:hover {
+            background: #f5f3ff;
+        }
+
+        /* Stats */
+        .stats {
+            padding: 4rem 2rem;
+            background: white;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat {
+            padding: 2rem;
+        }
+
+        .stat h3 {
+            font-size: 2.5rem;
+            color: #7c3aed;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat p {
+            color: #666;
+        }
+
+        /* Services */
+        .services {
+            padding: 4rem 2rem;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1a1a1a;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(124, 58, 237, 0.1);
+        }
+
+        .service-card h3 {
+            color: #7c3aed;
+            margin-bottom: 1rem;
+        }
+
+        /* Projects */
+        .projects {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .projects h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1a1a1a;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: #f9f9f9;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(124, 58, 237, 0.15);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            object-position: top center;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            color: #7c3aed;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-content p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-links a {
+            color: #7c3aed;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .project-links a:hover {
+            color: #6d28d9;
+        }
+
+        /* Skills */
+        .skills {
+            padding: 4rem 2rem;
+        }
+
+        .skills h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1a1a1a;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .skill h3 {
+            color: #7c3aed;
+            margin-bottom: 1rem;
+        }
+
+        .progress-bar {
+            background: #e8e5ff;
+            height: 8px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #7c3aed, #a78bfa);
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        /* Contact */
+        .contact {
+            padding: 4rem 2rem;
+            background: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #1a1a1a;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        .contact-item p {
+            color: #666;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #7c3aed;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7c3aed;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background: #7c3aed;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            nav a {
+                display: none;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Ibrahim.</div>
+            <div>
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <p style="color: #7c3aed; margin-bottom: 1rem;">HELLO, I'M IBRAHIM FATHELRAHMAN</p>
+            <h1>Web Developer<br><span class="highlight">& Graphic Designer</span></h1>
+            <p>A passionate developer and designer with experience in building digital products and creating compelling visual identities. Specializing in Flutter, React, and Brand Identity Design.</p>
+            <div class="buttons">
+                <a href="https://wa.me/qr/XTDJAOG5YNIEF1" class="btn btn-primary">Contact Me</a>
+                <a href="#projects" class="btn btn-secondary">View My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="stat">
+            <h3>4+</h3>
+            <p>Years of Experience</p>
+        </div>
+        <div class="stat">
+            <h3>20+</h3>
+            <p>Projects Completed</p>
+        </div>
+        <div class="stat">
+            <h3>15+</h3>
+            <p>Happy Clients</p>
+        </div>
+        <div class="stat">
+            <h3>5</h3>
+            <p>Professional Certificates</p>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>📱 Mobile Development</h3>
+                    <p>Building beautiful and functional mobile applications using Flutter and Dart with Firebase integration.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🌐 Web Development</h3>
+                    <p>Creating modern web applications with HTML5, CSS3, React, and JavaScript for optimal user experience.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🎨 Brand Identity</h3>
+                    <p>Designing unique brand identities using Photoshop and Illustrator to make your brand stand out.</p>
+                </div>
+                <div class="service-card">
+                    <h3>📱 Social Media Design</h3>
+                    <p>Creating engaging social media content and graphics that resonate with your audience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">🏢</div>
+                    <div class="project-content">
+                        <h3>IndieBrew</h3>
+                        <p>Modern coffee shop website with online ordering system</p>
+                        <div class="project-links">
+                            <a href="#">Live Demo</a>
+                            <a href="#">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">🎨</div>
+                    <div class="project-content">
+                        <h3>Agency</h3>
+                        <p>Creative agency website showcasing portfolio and services</p>
+                        <div class="project-links">
+                            <a href="#">Live Demo</a>
+                            <a href="#">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">🏗️</div>
+                    <div class="project-content">
+                        <h3>Construct</h3>
+                        <p>Construction company website with project portfolio</p>
+                        <div class="project-links">
+                            <a href="#">Live Demo</a>
+                            <a href="#">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">⏱️</div>
+                    <div class="project-content">
+                        <h3>TimeNow</h3>
+                        <p>Time management and productivity application</p>
+                        <div class="project-links">
+                            <a href="#">Live Demo</a>
+                            <a href="#">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">💰</div>
+                    <div class="project-content">
+                        <h3>Cryptop</h3>
+                        <p>Cryptocurrency dashboard with real-time data</p>
+                        <div class="project-links">
+                            <a href="#">Live Demo</a>
+                            <a href="#">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div style="background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%); height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">🎬</div>
+                    <div class="project-content">
+                        <h3>Snipper</h3>
+                        <p>Code snippet management and sharing tool</p>
+                        <div class="project-links">
+                            <a href="#">Live Demo</a>
+                            <a href="#">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="skills">
+        <div class="container">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill">
+                    <h3>Flutter & Dart</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 95%;"></div>
+                    </div>
+                    <p style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">95%</p>
+                </div>
+
+                <div class="skill">
+                    <h3>React & JavaScript</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 90%;"></div>
+                    </div>
+                    <p style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">90%</p>
+                </div>
+
+                <div class="skill">
+                    <h3>Adobe Photoshop</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 92%;"></div>
+                    </div>
+                    <p style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">92%</p>
+                </div>
+
+                <div class="skill">
+                    <h3>Adobe Illustrator</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 88%;"></div>
+                    </div>
+                    <p style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">88%</p>
+                </div>
+
+                <div class="skill">
+                    <h3>HTML5 & CSS3</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 95%;"></div>
+                    </div>
+                    <p style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">95%</p>
+                </div>
+
+                <div class="skill">
+                    <h3>Figma Design</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%;"></div>
+                    </div>
+                    <p style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">85%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📧 Email</h3>
+                    <p><a href="mailto:ibrahimfatho@gmail.com" style="color: #7c3aed; text-decoration: none;">ibrahimfatho@gmail.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>📱 Phone</h3>
+                    <p><a href="tel:+966558334958" style="color: #7c3aed; text-decoration: none;">+966 55 833 4958</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>📍 Location</h3>
+                    <p>Saudi Arabia</p>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://github.com/ibrahimfatho" title="GitHub">🐙</a>
+                <a href="https://www.behance.net/97bafcc4" title="Behance">🎨</a>
+                <a href="https://wa.me/qr/XTDJAOG5YNIEF1" title="WhatsApp">💬</a>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <a href="https://wa.me/qr/XTDJAOG5YNIEF1" class="btn btn-primary">Message Me on WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Ibrahim Fathelrahman. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
